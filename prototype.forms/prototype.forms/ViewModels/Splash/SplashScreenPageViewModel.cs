@@ -21,7 +21,7 @@ namespace prototype.forms.ViewModels.Splash
         {
             this.navigationPages = navigationPages;
 
-            /** Load initial data */
+            /** Load initial data => Replace with API call */
             Device.StartTimer(TimeSpan.FromSeconds(3), () =>
             {
                 Device.BeginInvokeOnMainThread(() =>

@@ -1,4 +1,5 @@
-﻿using prototype.forms.Interfaces.Navigation;
+﻿using prototype.forms.Helpers.Session;
+using prototype.forms.Interfaces.Navigation;
 using prototype.forms.Models.Menu;
 using prototype.forms.Models.Menu.Enums;
 using prototype.forms.Models.Navigation.Enums;
@@ -33,14 +34,34 @@ namespace prototype.forms.ViewModels
         {
             this.navigationPages = navigationPages;
 
-            BuildMenuItems();
+            if (SessionHelper.IsLoggedIn)
+                BuildMenuItemsPostLogIn();
+            else
+                BuildMenuItemsPreLogIn();
         }
 
         #endregion
 
         #region Methods
 
-        private void BuildMenuItems()
+        private void BuildMenuItemsPreLogIn()
+        {
+            MenuItems = new ObservableCollection<MenuOption>()
+            {
+                new MenuOption()
+                {
+                    Type = MenuTypes.About,
+                    Title = "About Us"
+                },
+                new MenuOption()
+                {
+                    Type = MenuTypes.LogIn,
+                    Title = "Log In",
+                }
+            };
+        }
+
+        private void BuildMenuItemsPostLogIn()
         {
             MenuItems = new ObservableCollection<MenuOption>()
             {
@@ -53,11 +74,6 @@ namespace prototype.forms.ViewModels
                 {
                     Type = MenuTypes.Home,
                     Title = "Home"
-                },
-                new MenuOption()
-                {
-                    Type = MenuTypes.LogIn,
-                    Title = "Log In",
                 }
             };
         }
