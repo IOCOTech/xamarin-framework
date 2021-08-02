@@ -12,6 +12,13 @@ namespace prototype.forms.ViewModels.About
 
         private readonly INavigationPages navigationPages;
 
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set { SetProperty(ref description, value); }
+        }
+
         #endregion
 
         #region Constructor
@@ -19,6 +26,8 @@ namespace prototype.forms.ViewModels.About
         public AboutPageViewModel(INavigationPages navigationPages)
         {
             this.navigationPages = navigationPages;
+
+            Description = "Put Description here...";
         }
 
         #endregion

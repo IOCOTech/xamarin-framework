@@ -58,7 +58,6 @@ namespace prototype.forms.ViewModels
                 {
                     Type = MenuTypes.LogIn,
                     Title = "Log In",
-                    Activated = true
                 }
             };
         }
@@ -88,17 +87,7 @@ namespace prototype.forms.ViewModels
         {
             var clickedMenuItem = (MenuOption)menuItem;
 
-            if (!clickedMenuItem.Activated)
-            {
-                clickedMenuItem.Activated = true;
-
-                menuItems.Where(x => x.Type != clickedMenuItem.Type).ToList().ForEach((item) =>
-                {
-                    item.Activated = false;
-                });
-
-                Navigate(clickedMenuItem.Type);
-            }
+            Navigate(clickedMenuItem.Type);
         }));
 
         #endregion

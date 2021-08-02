@@ -11,5 +11,6 @@ namespace prototype.forms.Interfaces.Navigation
     public interface INavigationPages
     {
         void SetMainPage(Pages page);
+        Task ShowLoadingIndicator(string message);
     }
 }

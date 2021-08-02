@@ -16,17 +16,6 @@ namespace prototype.forms.Models.Menu
 
         public MenuTypes Type { get; set; }
         public string Title { get; set; }
-        private bool activated;
-
-        public bool Activated
-        {
-            get { return activated; }
-            set 
-            { 
-                activated = value;
-                OnPropertyChanged("Activated");
-            }
-        }
 
     }
 }

@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="prototype.forms.Views.LogIn.LogInPage">
+             x:Class="prototype.forms.Views.LogIn.LogInPage"
+             Title="Log In">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="FillAndExpand"
+                         Padding="40,0,40,0">
+                <Label Text="Username"
+                       HorizontalOptions="StartAndExpand"></Label>
+                <Entry HorizontalOptions="FillAndExpand" 
+                       Placeholder="User Name" />
+                <Label Text="Password"
+                       HorizontalOptions="StartAndExpand"></Label>
+                <Entry HorizontalOptions="FillAndExpand" 
+                       BackgroundColor="Transparent" 
+                       IsPassword="True"
+                       Placeholder="Password" />
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Margin="40" Text="Log In"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

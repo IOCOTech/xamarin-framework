@@ -24,7 +24,9 @@ namespace prototype.forms.Views
             InitializeComponent();
 
             // Set master to menu page
-            Master = App.container.Resolve<MenuPage>();
+            if (Master == null)
+                Master = App.container.Resolve<MenuPage>();
+
             MasterBehavior = MasterBehavior.Popover;
 
             switch (page)
