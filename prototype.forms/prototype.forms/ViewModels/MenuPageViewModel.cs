@@ -19,8 +19,8 @@ namespace prototype.forms.ViewModels
 
         private readonly INavigationPages navigationPages;
 
-        private ObservableCollection<MenuOption> menuItems;
-        public ObservableCollection<MenuOption> MenuItems
+        private List<MenuOption> menuItems;
+        public List<MenuOption> MenuItems
         {
             get { return menuItems; }
             set { SetProperty(ref menuItems, value); }
@@ -46,7 +46,7 @@ namespace prototype.forms.ViewModels
 
         private void BuildMenuItemsPreLogIn()
         {
-            MenuItems = new ObservableCollection<MenuOption>()
+            MenuItems = new List<MenuOption>()
             {
                 new MenuOption()
                 {
@@ -63,7 +63,7 @@ namespace prototype.forms.ViewModels
 
         private void BuildMenuItemsPostLogIn()
         {
-            MenuItems = new ObservableCollection<MenuOption>()
+            MenuItems = new List<MenuOption>()
             {
                 new MenuOption()
                 {
